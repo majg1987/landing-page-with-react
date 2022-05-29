@@ -6,36 +6,40 @@ import Footer from "./Footer.jsx";
 //create your first component
 
 const Home = () => {
+	const datos = [
+		{
+			title: "Paisaje Rio",
+			url: "https://picsum.photos/id/1015/6000/4000",
+		},
+		{
+			title: "Paisaje Montaña",
+			url: "https://picsum.photos/id/1018/3914/2935",
+		},
+		{
+			title: "Aurora Boreal",
+			url: "https://picsum.photos/id/1022/6000/3376",
+		},
+		{
+			title: "Paisaje Cascada",
+			url: "https://picsum.photos/id/1039/6945/4635",
+		},
+	];
+
 	return (
 		<>
 			<NavBar />
 			<div className="container">
 				<Jumbotron />
 				<div className="row d-flex justify-content-center">
-					<div className="col-md-6 col-lg-3">
-						<Card
-							src="https://picsum.photos/id/1011/5472/3648"
-							title="Navegando por el Lago"
-						/>
-					</div>
-					<div className="col-md-6 col-lg-3">
-						<Card
-							src="https://picsum.photos/id/110/5616/3744"
-							title="Atardecer"
-						/>
-					</div>
-					<div className="col-md-6 col-lg-3">
-						<Card
-							src="https://picsum.photos/id/28/4928/3264"
-							title="Naturaleza"
-						/>
-					</div>
-					<div className="col-md-6 col-lg-3">
-						<Card
-							src="https://picsum.photos/id/374/3888/2592"
-							title="Playas Virgenes"
-						/>
-					</div>
+					{datos.map((item, index) => (
+						<div className="col-md-6 col-lg-3">
+							<Card
+								url={item.url}
+								title={item.title}
+								key={index}
+							/>
+						</div>
+					))}
 				</div>
 			</div>
 			<Footer />

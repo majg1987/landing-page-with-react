@@ -5,3 +5,7 @@
 .jumbotron {
     background-color: lavender;
 }
+
+img {
+    height: 200px;
+}

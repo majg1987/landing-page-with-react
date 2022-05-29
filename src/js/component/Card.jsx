@@ -1,10 +1,9 @@
 import React from "react";
 
-const Card = (props) => {
-	const { src, title } = props;
+const Card = ({ url, title, key }) => {
 	return (
 		<div className="card text-center mb-5">
-			<img src={src} className="card-img-top" alt="img" />
+			<img src={url} className="card-img-top" alt="img" />
 			<div className="card-body">
 				<h5 className="card-title">{title}</h5>
 				<p className="card-text pb-5 border-bottom">
